@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_ValidFormSubmission</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>affdf8e6-8116-4a9e-b0b3-8826fa5cbb81</testCaseGuid>
+</TestCaseEntity>
