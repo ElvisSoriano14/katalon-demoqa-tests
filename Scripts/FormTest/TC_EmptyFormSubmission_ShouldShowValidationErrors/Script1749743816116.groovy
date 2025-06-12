@@ -15,15 +15,24 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.Keys
+import com.kms.katalon.core.util.KeywordUtil
+
+import pages.FormsPage
 import pages.FormsPage
 
 FormsPage form = new FormsPage()
 
-
 form.openBrowser()
-form.fillForm("Ale", "Soriano", "ale@example.com", "8091234567", "subject", "Main house")
-form.submitForm()
-form.VerifySubmission()
+form.submitEmptyForm()
 
-WebUI.closeBrowser()
+WebUI.delay(1)
+
+
+def firstNameHasError = form.isFirstNameRequired()
+
+if (firstNameHasError) {
+	KeywordUtil.markPassed("The First Name field shows validation as expected.")
+} else {
+	KeywordUtil.markFailed("The First Name field does not show an error when submitting an empty form.")
+}

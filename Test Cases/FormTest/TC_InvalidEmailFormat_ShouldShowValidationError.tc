@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_InvalidEmailFormat_ShouldShowValidationError</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>7bd597f2-3d76-4176-8aaf-6053de24c6d8</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_EmptyFormSubmission_ShouldShowValidationErrors</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5c8d2f18-8ad8-4031-8834-d6785963dc82</testCaseGuid>
+</TestCaseEntity>

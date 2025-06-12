@@ -28,8 +28,8 @@ public class FormsPage {
 	 * Maximizes the browser window after loading the page.
 	 *
 	 * 	<div style="background-color:#fff; border:1px solid #ddd; border-radius:10px; padding:12px 16px; width:fit-content; max-width:70%; font-family:monospace; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
-		<span style="color:#007acc; font-weight:bold;">FormsPage</span>.<span style="color:#2e8b57;">openBrowser</span><span style="color:#000;">();</span>
-	</div>
+	 <span style="color:#007acc; font-weight:bold;">FormsPage</span>.<span style="color:#2e8b57;">openBrowser</span><span style="color:#000;">();</span>
+	 </div>
 	 *
 	 * @author Elvis Soriano
 	 */
@@ -38,21 +38,21 @@ public class FormsPage {
 		WebUI.maximizeWindow()
 	}
 
-	
+
 	/**
 	 * Fills out the form with the provided information.
 	 * Sets text values for all required fields and selects gender and hobby options.
 	 *
 	 * 	<div style="background-color:#fff; border:1px solid #ddd; border-radius:10px; padding:12px 16px; width:fit-content; max-width:70%; font-family:monospace; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
-    	<span style="color:#007acc; font-weight:bold;">FormsPage</span>.<span style="color:#2e8b57; height:80px;">fillForm</span><span style="color:#000;">);</span>
-	 	<span style="color:#444;">"John",</span>
-	  	<span style="color:#444;">"Doe",</span> 
-	  	<span style="color:#444;">"john.doe@email.com",</span> 
-	  	<span style="color:#444;">"1234567890",</span> 
-	  	<span style="color:#444;">"Math",</span> 
-	  	<span style="color:#444;">"123 Main St",</span>
-	  	<span style="color:#000;">);</span>
-	</div>
+	 <span style="color:#007acc; font-weight:bold;">FormsPage</span>.<span style="color:#2e8b57; height:80px;">fillForm</span><span style="color:#000;">);</span>
+	 <span style="color:#444;">"John",</span>
+	 <span style="color:#444;">"Doe",</span> 
+	 <span style="color:#444;">"john.doe@email.com",</span> 
+	 <span style="color:#444;">"1234567890",</span> 
+	 <span style="color:#444;">"Math",</span> 
+	 <span style="color:#444;">"123 Main St",</span>
+	 <span style="color:#000;">);</span>
+	 </div>
 	 *
 	 * @param firstName First name of the user
 	 * @param lastName Last name of the user
@@ -74,30 +74,62 @@ public class FormsPage {
 		WebUI.click(OR.findTestObject('FormsPage/checkbox_HobbySports'))
 		WebUI.setText(OR.findTestObject('FormsPage/textarea_Address'), address)
 	}
-	
+
 	/**
 	 * Submits the completed form by clicking the submit button.
 	 *
 	 * 	<div style="background-color:#fff; border:1px solid #ddd; border-radius:10px; padding:12px 16px; width:fit-content; max-width:70%; font-family:monospace; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
-		<span style="color:#007acc; font-weight:bold;">FormsPage</span><span style="color:#000;">.</span><span style="color:#2e8b57;">submitForm</span><span style="color:#000;">();</span>
-	</div>
+	 <span style="color:#007acc; font-weight:bold;">FormsPage</span><span style="color:#000;">.</span><span style="color:#2e8b57;">submitForm</span><span style="color:#000;">();</span>
+	 </div>
 	 *
 	 * @author Elvis Soriano
 	 */
 	def submitForm() {
 		WebUI.click(OR.findTestObject('FormsPage/btn_Submit'))
 	}
-	
+
 	/**
 	 * Verifies that the form was submitted successfully by checking for the confirmation message.
 	 *
 	 * 	<div style="background-color:#fff; border:1px solid #ddd; border-radius:10px; padding:12px 16px; width:fit-content; max-width:70%; font-family:monospace; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
-		<span style="color:#007acc; font-weight:bold;">FormsPage</span><span style="color:#000;">.</span><span style="color:#2e8b57;">VerifySubmission</span><span style="color:#000;">();</span>
-	</div>
+	 <span style="color:#007acc; font-weight:bold;">FormsPage</span><span style="color:#000;">.</span><span style="color:#2e8b57;">VerifySubmission</span><span style="color:#000;">();</span>
+	 </div>
 	 *
 	 * @author Elvis Soriano
 	 */
 	def VerifySubmission() {
 		WebUI.verifyTextPresent('Thanks for submitting the form', false)
 	}
+	
+	
+	/**
+	 * Submits the form without filling any fields to trigger validation messages.
+	 *
+	 * 	<div style="background-color:#fff; border:1px solid #ddd; border-radius:10px; padding:12px 16px; width:fit-content; max-width:70%; font-family:monospace; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
+	 <span style="color:#007acc; font-weight:bold;">FormsPage</span><span style="color:#000;">.</span><span style="color:#2e8b57;">submitEmptyForm</span><span style="color:#000;">();</span>
+	 </div>
+	 *
+	 * @author Elvis Soriano
+	 */
+	def submitEmptyForm() {
+		WebUI.scrollToElement(OR.findTestObject('FormsPage/btn_Submit'), 50)
+		WebUI.click(findTestObject('FormsPage/btn_Submit'))
+	}
+	
+	
+	/**
+	 * Checks whether the First Name field is marked as required by inspecting the CSS class.
+	 *
+	 * 	<div style="background-color:#fff; border:1px solid #ddd; border-radius:10px; padding:12px 16px; width:fit-content; max-width:70%; font-family:monospace; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
+	 <span style="color:#007acc; font-weight:bold;">FormsPage</span><span style="color:#000;">.</span><span style="color:#2e8b57;">isFirstNameRequired</span><span style="color:#000;">();</span>
+	 </div>
+	 *
+	 * @return boolean - true if the field shows a validation error, false otherwise.
+	 * @author Elvis Soriano
+	 */
+	def isFirstNameRequired() {
+		return WebUI.getAttribute(findTestObject('FormsPage/input_FirstName'), 'class').contains('field-error')
+	}
+	
+	
 }

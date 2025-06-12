@@ -16,14 +16,23 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.util.KeywordUtil
 import pages.FormsPage
 
 FormsPage form = new FormsPage()
 
-
 form.openBrowser()
-form.fillForm("Ale", "Soriano", "ale@example.com", "8091234567", "subject", "Main house")
+form.fillForm("Ale", "Soriano", "aleexample.com", "8091234567", "subject", "Main house")
 form.submitForm()
-form.VerifySubmission()
+
+
+// Validate if the Email field shows an error
+boolean emailHasError = WebUI.getAttribute(findTestObject('FormsPage/input_UserEmail'), 'class').contains('field-error')
+
+if (emailHasError) {
+	KeywordUtil.markPassed("The Email field shows validation error as expected.")
+} else {
+	KeywordUtil.markFailed("The Email field did not show validation for an invalid email format.")
+}
 
 WebUI.closeBrowser()
