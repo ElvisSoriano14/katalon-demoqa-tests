@@ -100,8 +100,8 @@ public class FormsPage {
 	def VerifySubmission() {
 		WebUI.verifyTextPresent('Thanks for submitting the form', false)
 	}
-	
-	
+
+
 	/**
 	 * Submits the form without filling any fields to trigger validation messages.
 	 *
@@ -115,8 +115,8 @@ public class FormsPage {
 		WebUI.scrollToElement(OR.findTestObject('FormsPage/btn_Submit'), 50)
 		WebUI.click(findTestObject('FormsPage/btn_Submit'))
 	}
-	
-	
+
+
 	/**
 	 * Checks whether the First Name field is marked as required by inspecting the CSS class.
 	 *
@@ -130,6 +130,4 @@ public class FormsPage {
 	def isFirstNameRequired() {
 		return WebUI.getAttribute(findTestObject('FormsPage/input_FirstName'), 'class').contains('field-error')
 	}
-	
-	
 }

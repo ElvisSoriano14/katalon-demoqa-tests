@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_AddNewRecord_ShouldDisplayInTable</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d3fa7b25-3237-496b-8ed7-3c673cb54626</testCaseGuid>
+</TestCaseEntity>
